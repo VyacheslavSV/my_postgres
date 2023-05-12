@@ -761,22 +761,22 @@ COPY public.auth_permission (id, name, content_type_id, codename) FROM stdin;
 58	Can change comment like	15	change_commentlike
 59	Can delete comment like	15	delete_commentlike
 60	Can view comment like	15	view_commentlike
-61	Can add source	16	add_source
-62	Can change source	16	change_source
-63	Can delete source	16	delete_source
-64	Can view source	16	view_source
-65	Can add thumbnail	17	add_thumbnail
-66	Can change thumbnail	17	change_thumbnail
-67	Can delete thumbnail	17	delete_thumbnail
-68	Can view thumbnail	17	view_thumbnail
-69	Can add thumbnail dimensions	18	add_thumbnaildimensions
-70	Can change thumbnail dimensions	18	change_thumbnaildimensions
-71	Can delete thumbnail dimensions	18	delete_thumbnaildimensions
-72	Can view thumbnail dimensions	18	view_thumbnaildimensions
-73	Can add subscription	19	add_subscription
-74	Can change subscription	19	change_subscription
-75	Can delete subscription	19	delete_subscription
-76	Can view subscription	19	view_subscription
+61	Can add subscription	16	add_subscription
+62	Can change subscription	16	change_subscription
+63	Can delete subscription	16	delete_subscription
+64	Can view subscription	16	view_subscription
+65	Can add source	17	add_source
+66	Can change source	17	change_source
+67	Can delete source	17	delete_source
+68	Can view source	17	view_source
+69	Can add thumbnail	18	add_thumbnail
+70	Can change thumbnail	18	change_thumbnail
+71	Can delete thumbnail	18	delete_thumbnail
+72	Can view thumbnail	18	view_thumbnail
+73	Can add thumbnail dimensions	19	add_thumbnaildimensions
+74	Can change thumbnail dimensions	19	change_thumbnaildimensions
+75	Can delete thumbnail dimensions	19	delete_thumbnaildimensions
+76	Can view thumbnail dimensions	19	view_thumbnaildimensions
 \.
 
 
@@ -785,6 +785,8 @@ COPY public.auth_permission (id, name, content_type_id, codename) FROM stdin;
 --
 
 COPY public.auth_user (id, password, last_login, is_superuser, username, first_name, last_name, email, is_staff, is_active, date_joined) FROM stdin;
+2	pbkdf2_sha256$600000$QRzQziqz5iXFrgJT2gcM9O$elJrPgoQEFIjE6m1/pm/tZv1lCliX6fGGbKbkkM/Oms=	2023-05-12 20:32:59.568593+00	f	terran			terran@gmail.com	f	t	2023-05-12 20:32:59.250971+00
+1	pbkdf2_sha256$600000$Md85UfgPb5lttdWuxePD4l$FnhTc6k8+4f5eI7CDCMGRRbIuyPO7dGWvPz1Lj1BdrI=	2023-05-12 20:34:16.439269+00	f	zerg			zerg@gmail.com	f	t	2023-05-12 20:31:08.296022+00
 \.
 
 
@@ -832,10 +834,10 @@ COPY public.django_content_type (id, app_label, model) FROM stdin;
 13	webapp	postimage
 14	webapp	commenttag
 15	webapp	commentlike
-16	easy_thumbnails	source
-17	easy_thumbnails	thumbnail
-18	easy_thumbnails	thumbnaildimensions
-19	webapp	subscription
+16	webapp	subscription
+17	easy_thumbnails	source
+18	easy_thumbnails	thumbnail
+19	easy_thumbnails	thumbnaildimensions
 \.
 
 
@@ -844,45 +846,45 @@ COPY public.django_content_type (id, app_label, model) FROM stdin;
 --
 
 COPY public.django_migrations (id, app, name, applied) FROM stdin;
-1	contenttypes	0001_initial	2023-04-28 14:57:41.61354+00
-2	auth	0001_initial	2023-04-28 14:57:41.744113+00
-3	admin	0001_initial	2023-04-28 14:57:41.784428+00
-4	admin	0002_logentry_remove_auto_add	2023-04-28 14:57:41.798514+00
-5	admin	0003_logentry_add_action_flag_choices	2023-04-28 14:57:41.814492+00
-6	contenttypes	0002_remove_content_type_name	2023-04-28 14:57:41.840211+00
-7	auth	0002_alter_permission_name_max_length	2023-04-28 14:57:41.857374+00
-8	auth	0003_alter_user_email_max_length	2023-04-28 14:57:41.873499+00
-9	auth	0004_alter_user_username_opts	2023-04-28 14:57:41.891146+00
-10	auth	0005_alter_user_last_login_null	2023-04-28 14:57:41.907317+00
-11	auth	0006_require_contenttypes_0002	2023-04-28 14:57:41.912488+00
-12	auth	0007_alter_validators_add_error_messages	2023-04-28 14:57:41.9266+00
-13	auth	0008_alter_user_username_max_length	2023-04-28 14:57:41.94801+00
-14	auth	0009_alter_user_last_name_max_length	2023-04-28 14:57:41.963686+00
-15	auth	0010_alter_group_name_max_length	2023-04-28 14:57:41.980388+00
-16	auth	0011_update_proxy_permissions	2023-04-28 14:57:41.995071+00
-17	auth	0012_alter_user_first_name_max_length	2023-04-28 14:57:42.011065+00
-18	easy_thumbnails	0001_initial	2023-04-28 14:57:42.088096+00
-19	easy_thumbnails	0002_thumbnaildimensions	2023-04-28 14:57:42.110188+00
-20	sessions	0001_initial	2023-04-28 14:57:42.135722+00
-21	webapp	0001_initial	2023-04-28 14:57:42.414249+00
-22	webapp	0002_alter_postimage_image	2023-04-28 14:57:42.429127+00
-23	webapp	0003_alter_userprofile_avatar	2023-04-28 14:57:42.448688+00
-24	webapp	0004_alter_userprofile_avatar	2023-04-28 14:57:42.472467+00
-25	webapp	0005_alter_userprofile_avatar	2023-04-28 14:57:42.531199+00
-26	webapp	0006_alter_postimage_image_alter_userprofile_avatar	2023-04-28 14:57:42.558343+00
-27	webapp	0007_alter_postimage_image_alter_userprofile_avatar	2023-04-28 14:57:42.586129+00
-28	webapp	0008_alter_postimage_image_alter_userprofile_avatar	2023-04-28 14:57:42.614441+00
-29	webapp	0009_alter_postimage_image	2023-04-28 14:57:42.631152+00
-30	webapp	0010_post_images_post_tags_alter_commenttag_comment_and_more	2023-04-28 14:57:42.793913+00
-31	webapp	0011_remove_post_images_remove_post_tags_and_more	2023-04-28 14:57:42.888958+00
-32	webapp	0012_alter_commentlike_comment_alter_commenttag_comment_and_more	2023-04-28 14:57:43.006164+00
-33	webapp	0013_relationship_userprofile_relationships	2023-05-11 22:24:53.181517+00
-34	webapp	0014_subscription_remove_userprofile_relationships_and_more	2023-05-11 22:24:53.217821+00
-35	webapp	0015_rename_subscriber_subscription_user_and_more	2023-05-11 22:24:53.277242+00
-36	webapp	0016_alter_postimage_image_alter_userprofile_avatar	2023-05-11 22:24:53.29329+00
-37	webapp	0017_alter_postimage_image	2023-05-11 22:24:53.300768+00
-38	webapp	0018_alter_postimage_image_alter_userprofile_avatar	2023-05-11 22:24:53.319001+00
-39	webapp	0019_alter_postimage_image	2023-05-11 22:24:53.328273+00
+1	contenttypes	0001_initial	2023-05-12 20:30:03.758392+00
+2	auth	0001_initial	2023-05-12 20:30:03.818873+00
+3	admin	0001_initial	2023-05-12 20:30:03.83724+00
+4	admin	0002_logentry_remove_auto_add	2023-05-12 20:30:03.844487+00
+5	admin	0003_logentry_add_action_flag_choices	2023-05-12 20:30:03.852852+00
+6	contenttypes	0002_remove_content_type_name	2023-05-12 20:30:03.867337+00
+7	auth	0002_alter_permission_name_max_length	2023-05-12 20:30:03.875035+00
+8	auth	0003_alter_user_email_max_length	2023-05-12 20:30:03.882426+00
+9	auth	0004_alter_user_username_opts	2023-05-12 20:30:03.890473+00
+10	auth	0005_alter_user_last_login_null	2023-05-12 20:30:03.899045+00
+11	auth	0006_require_contenttypes_0002	2023-05-12 20:30:03.901359+00
+12	auth	0007_alter_validators_add_error_messages	2023-05-12 20:30:03.909114+00
+13	auth	0008_alter_user_username_max_length	2023-05-12 20:30:03.919817+00
+14	auth	0009_alter_user_last_name_max_length	2023-05-12 20:30:03.928688+00
+15	auth	0010_alter_group_name_max_length	2023-05-12 20:30:03.936355+00
+16	auth	0011_update_proxy_permissions	2023-05-12 20:30:03.943172+00
+17	auth	0012_alter_user_first_name_max_length	2023-05-12 20:30:03.950387+00
+18	easy_thumbnails	0001_initial	2023-05-12 20:30:03.986063+00
+19	easy_thumbnails	0002_thumbnaildimensions	2023-05-12 20:30:03.997317+00
+20	sessions	0001_initial	2023-05-12 20:30:04.009422+00
+21	webapp	0001_initial	2023-05-12 20:30:04.1427+00
+22	webapp	0002_alter_postimage_image	2023-05-12 20:30:04.177141+00
+23	webapp	0003_alter_userprofile_avatar	2023-05-12 20:30:04.186585+00
+24	webapp	0004_alter_userprofile_avatar	2023-05-12 20:30:04.195893+00
+25	webapp	0005_alter_userprofile_avatar	2023-05-12 20:30:04.20549+00
+26	webapp	0006_alter_postimage_image_alter_userprofile_avatar	2023-05-12 20:30:04.220354+00
+27	webapp	0007_alter_postimage_image_alter_userprofile_avatar	2023-05-12 20:30:04.237662+00
+28	webapp	0008_alter_postimage_image_alter_userprofile_avatar	2023-05-12 20:30:04.252304+00
+29	webapp	0009_alter_postimage_image	2023-05-12 20:30:04.260193+00
+30	webapp	0010_post_images_post_tags_alter_commenttag_comment_and_more	2023-05-12 20:30:04.340544+00
+31	webapp	0011_remove_post_images_remove_post_tags_and_more	2023-05-12 20:30:04.392128+00
+32	webapp	0012_alter_commentlike_comment_alter_commenttag_comment_and_more	2023-05-12 20:30:04.448193+00
+33	webapp	0013_relationship_userprofile_relationships	2023-05-12 20:30:04.48358+00
+34	webapp	0014_subscription_remove_userprofile_relationships_and_more	2023-05-12 20:30:04.515873+00
+35	webapp	0015_rename_subscriber_subscription_user_and_more	2023-05-12 20:30:04.562824+00
+36	webapp	0016_alter_postimage_image_alter_userprofile_avatar	2023-05-12 20:30:04.580119+00
+37	webapp	0017_alter_postimage_image	2023-05-12 20:30:04.587845+00
+38	webapp	0018_alter_postimage_image_alter_userprofile_avatar	2023-05-12 20:30:04.603662+00
+39	webapp	0019_alter_postimage_image	2023-05-12 20:30:04.613111+00
 \.
 
 
@@ -891,6 +893,7 @@ COPY public.django_migrations (id, app, name, applied) FROM stdin;
 --
 
 COPY public.django_session (session_key, session_data, expire_date) FROM stdin;
+t9mhs3n4q2iieiu3o33j2bll1yv7ym1y	.eJxVjLEOwjAMRP8lM4pSJXVqRna-IXJsQwoolZp2Qvw7rdQBttO9d_c2idalpLXpnEYxZ9OZ02-XiZ9adyAPqvfJ8lSXecx2V-xBm71Ooq_L4f4dFGplWxME5cF7zII8kBfhiD5m6YJHJgANJM6BbDlGoICgEvDGor3rUcznC_86OKo:1pxZSy:veojc5RCHV5rAksO_3uHP5mn-migPNqhMjRX7hR62RE	2023-05-26 20:34:16.441597+00
 \.
 
 
@@ -979,6 +982,7 @@ COPY public.webapp_posttag (id, post_id, tag_id) FROM stdin;
 --
 
 COPY public.webapp_subscription (id, created_at, subscribed_to_id, user_id) FROM stdin;
+1	2023-05-12 20:33:52.928684+00	1	2
 \.
 
 
@@ -987,6 +991,8 @@ COPY public.webapp_subscription (id, created_at, subscribed_to_id, user_id) FROM
 --
 
 COPY public.webapp_tag (id, name) FROM stdin;
+1	war
+2	home
 \.
 
 
@@ -995,6 +1001,8 @@ COPY public.webapp_tag (id, name) FROM stdin;
 --
 
 COPY public.webapp_userprofile (id, full_name, bio, avatar, user_id) FROM stdin;
+1	Zerg Protosovich	We are the swamp	image/upload/v1683923307/vje7ledwo07wzxratosv.jpg	1
+2	Terran Marine	Humen	image/upload/v1683923413/v27zq0lohaxrbolordwx.jpg	2
 \.
 
 
@@ -1003,6 +1011,7 @@ COPY public.webapp_userprofile (id, full_name, bio, avatar, user_id) FROM stdin;
 --
 
 COPY public.webapp_userprofile_subscriptions (id, userprofile_id, user_id) FROM stdin;
+1	2	1
 \.
 
 
@@ -1038,7 +1047,7 @@ SELECT pg_catalog.setval('public.auth_user_groups_id_seq', 1, false);
 -- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: djangogram
 --
 
-SELECT pg_catalog.setval('public.auth_user_id_seq', 1, false);
+SELECT pg_catalog.setval('public.auth_user_id_seq', 2, true);
 
 
 --
@@ -1115,14 +1124,14 @@ SELECT pg_catalog.setval('public.webapp_commenttag_id_seq', 1, false);
 -- Name: webapp_post_id_seq; Type: SEQUENCE SET; Schema: public; Owner: djangogram
 --
 
-SELECT pg_catalog.setval('public.webapp_post_id_seq', 1, false);
+SELECT pg_catalog.setval('public.webapp_post_id_seq', 2, true);
 
 
 --
 -- Name: webapp_postimage_id_seq; Type: SEQUENCE SET; Schema: public; Owner: djangogram
 --
 
-SELECT pg_catalog.setval('public.webapp_postimage_id_seq', 1, false);
+SELECT pg_catalog.setval('public.webapp_postimage_id_seq', 2, true);
 
 
 --
@@ -1136,35 +1145,35 @@ SELECT pg_catalog.setval('public.webapp_postlike_id_seq', 1, false);
 -- Name: webapp_posttag_id_seq; Type: SEQUENCE SET; Schema: public; Owner: djangogram
 --
 
-SELECT pg_catalog.setval('public.webapp_posttag_id_seq', 1, false);
+SELECT pg_catalog.setval('public.webapp_posttag_id_seq', 2, true);
 
 
 --
 -- Name: webapp_subscription_id_seq; Type: SEQUENCE SET; Schema: public; Owner: djangogram
 --
 
-SELECT pg_catalog.setval('public.webapp_subscription_id_seq', 1, false);
+SELECT pg_catalog.setval('public.webapp_subscription_id_seq', 1, true);
 
 
 --
 -- Name: webapp_tag_id_seq; Type: SEQUENCE SET; Schema: public; Owner: djangogram
 --
 
-SELECT pg_catalog.setval('public.webapp_tag_id_seq', 1, false);
+SELECT pg_catalog.setval('public.webapp_tag_id_seq', 2, true);
 
 
 --
 -- Name: webapp_userprofile_id_seq; Type: SEQUENCE SET; Schema: public; Owner: djangogram
 --
 
-SELECT pg_catalog.setval('public.webapp_userprofile_id_seq', 1, false);
+SELECT pg_catalog.setval('public.webapp_userprofile_id_seq', 2, true);
 
 
 --
 -- Name: webapp_userprofile_subscriptions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: djangogram
 --
 
-SELECT pg_catalog.setval('public.webapp_userprofile_subscriptions_id_seq', 1, false);
+SELECT pg_catalog.setval('public.webapp_userprofile_subscriptions_id_seq', 1, true);
 
 
 --
